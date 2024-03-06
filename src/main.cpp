@@ -2,6 +2,8 @@
 #include <class_instrumento>
 #include <class_alarma>
 #include <class_chek>
+
+
 #define LED1 = D1
 // put function declarations here:
 int myFunction(int, int);
@@ -30,7 +32,7 @@ void loop() {
    }
 else
   digitalWrite(LED1,LOW);
-  
+
 }
 
 // put function definitions here:

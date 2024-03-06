@@ -1,15 +1,30 @@
+ //agregar las librerias que sean necesarias.
+
  class _instrumento{
     private: //atributos
+      //baudios a lo que el sensor se debe inicializar
+      float Bd;
+      //pin que utiliza el sensor
+
+      //valor de inicializacion del instrumento
+      dht.begin(Bd);
+
+      //tiempo en que se midio la ultima vez (por si el sensor necesita un tiempo entre medicion y medicion)
+      float timeSensor;
+    public: //metodos
     short Nombre;
     float medicion;
     int estado;
+    //tendria que guardar el valor medido en una base de datos (ver la opcion de hacerlo en otra clase)
+    void saveinfirebase(float); 
 
-    public: //metodos
-    _instrumento (short, float, int); //constructor 1
-    void saveinfirebase(float);
-    void Estado(short,float,int);
-    int getMedicion();
-    void settMedicion();
+    //retorna un valor para reconocer si esta activo o inactivo.
+    int Estado(); 
+
+    //retorna la medicion del sensor
+    float getMedicion();
+
+    _instrumento (short); //constructor 1 // contruimos el sensor con solo el nombre 
  };
 
  //constructor 1
@@ -17,16 +32,10 @@
     nombre=_Nombre;
  }
 
-
-int _instrumento::getMedicion(){        //retornamos el valor encapsulado del valor medido
+//retornamos el valor encapsulado del valor medido
+int _instrumento::getMedicion(){        
      return medicion;
 }
-
-
-void _instrumento::settMedicion(float _Medicion){
-    medicion = _Medicion;
-}
-
 
 //funsiones 
     void _instrumento::GuardarMedicion(){ //es de clase void, pertenece a la clase instrumento y se llama guardar medicion
@@ -35,5 +44,6 @@ void _instrumento::settMedicion(float _Medicion){
     }
 
     void _instrumento::VerificacionFunsionamiento(){
-      //corroborar de alguna manera que el instrumento este midiendo bien
+      //corroborar de alguna manera que el instrumento este en funcinamiento, es decir que no este desconectado u/o apagado
+
     }
