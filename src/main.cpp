@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include <class_instrumento>
-#include <class_alarma>
-#include <class_chek>
+#include <InstrumentoClass.h>
+//#include <class_alarma>
+//#include <class_chek>
 
 
 #define LED1 = D1
