@@ -2,8 +2,9 @@
 
 #ifndef InstrumentoClass_h
 #define InstrumentoClass.h
+#include IntInstrumentos.h
 
- class Instrumento{
+ class Instrumento : public IntInstrumentos{
     private: //atributos
       //baudios a lo que el sensor se debe inicializar
       float _Bd;
@@ -23,6 +24,12 @@
     int Estado();
     //retorna la medicion del sensor
     float getMedicion();
+
+    //deacuerdo con el Interfaz Instrumentos debe tener los siguientes parametros 
+    void TensionEntrada(float);
+
+    void Formula(void);
+
  };
 
  

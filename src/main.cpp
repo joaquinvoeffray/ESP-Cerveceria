@@ -1,31 +1,32 @@
 #include <Arduino.h>
-#include <InstrumentoClass.h>
+#include <sensorLM35.h>
+
 //#include <class_alarma>
 //#include <class_chek>
 
 
-#define LED1 = D1
+#define LED1 4
+
+LM35 STAguaIngreso(2);
+
 // put function declarations here:
 int myFunction(int, int);
-float medicion;
+double medicion;
+//Constructor de instrumento
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(3, 4);
+  //int result = myFunction(3, 4);
   pinMode (LED1,OUTPUT);
+  
+ 
 
   }
  
 void loop() {
-  //control de que la planta esta en condiciones y en funcionamiento
-  _check(aguamacerado,estado,0);
-  _check(maserado,estado,0);
-  _check(coccion,estado,0);
-  //envio de alertas
-  //Constructor de instrumento
-  _instrumento::_instrumento(TemperaturaAguaInicial);
+  
   //encender led a x temperatura
-  medicion = getMedicion;
+  medicion = STAguaIngreso.GetMeasure();
   
    if (medicion >= 30){
     digitalWrite (LED1,HIGH);
